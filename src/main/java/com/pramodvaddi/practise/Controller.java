@@ -1,24 +1,28 @@
-package com.pramodvaddiraju.quizapp;
+package com.pramodvaddi.practise;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
+@RequestMapping("/api")
 public class Controller {
 
-    @Autowired
-    private Mercedes C250;
+    private Mercedes c250;
 
-    public Controller(Mercedes car){
-        this.C250 = car;
+    public Controller(Mercedes model){
+        this.c250 = model;
 
     }
+
     @GetMapping("/body")
-    public String bodyType(){
-        return C250.bodyType();
+    public String type(){
+        return c250.bodyType();
     }
 
-    @GetMapping("/making")
-    public int cost(){
-        return C250.makeingCost();
+    @GetMapping("/price")
+    public int price(){
+        return c250.makeingCost();
     }
+
 }

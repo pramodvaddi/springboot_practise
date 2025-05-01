@@ -1,4 +1,4 @@
-package com.pramodvaddiraju.quizapp;
+package com.pramodvaddi.practise;
 
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.pramodvaddiraju.quizapp;
+package com.pramodvaddi.practise;
 
 public interface Car {
     public String bodyType();

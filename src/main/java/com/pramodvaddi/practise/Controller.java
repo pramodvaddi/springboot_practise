@@ -1,5 +1,6 @@
 package com.pramodvaddi.practise;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,21 +9,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class Controller {
 
-    private Mercedes c250;
 
-    public Controller(Mercedes model){
-        this.c250 = model;
+    private Car theCar;
+
+    @Autowired
+    public Controller(Car newCar){
+        this.theCar = newCar;
 
     }
 
     @GetMapping("/body")
     public String type(){
-        return c250.bodyType();
+        return theCar.bodyType();
     }
 
     @GetMapping("/price")
     public int price(){
-        return c250.makeingCost();
+        return theCar.makeingCost();
     }
 
 }
